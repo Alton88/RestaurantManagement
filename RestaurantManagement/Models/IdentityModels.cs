@@ -31,17 +31,11 @@ namespace RestaurantManagement.Models
         }
         public DbSet<Applicant> Applicant { get; set; }
         public DbSet<Customer> Customer { get; set; }
-
-        public DbSet<Driver> Driver { get; set; }
         public DbSet<Entree> Entree { get; set; }
-        public DbSet<Hostess> Hostess { get; set; }
-        public DbSet<KitchenStaff> KitchenStaff { get; set; }
-        public DbSet<Manager> Manager { get; set; }
         public DbSet<Order> Order { get; set; }
-
         public DbSet<Reservation> Reservation { get; set; }
         public DbSet<Starter> Starter { get; set; }
         public DbSet<WaitingList> WaitingList { get; set; }
-        public DbSet<WaitStaff> WaitStaff { get; set; }
+        public DbSet<Employee> Employee { get; set; }
     }
 }

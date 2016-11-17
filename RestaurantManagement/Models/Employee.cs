@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestaurantManagement.Models
 {
-    public class Hostess
+    public class Employee
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -15,7 +15,6 @@ namespace RestaurantManagement.Models
         public string StreetAddress { get; set; }
         public string ZipCode { get; set; }
         public decimal Wage { get; set; }
-        public string DaysAvailable { get; set; }
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }

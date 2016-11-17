@@ -20,11 +20,6 @@ namespace RestaurantManagement.Models
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
-        [ForeignKey("WaitStaff")]
-        public int WaitStaffId { get; set; }
-        public WaitStaff WaitStaff { get; set; }
-        [ForeignKey("Driver")]
-        public int DriverId { get; set; }
-        public Driver Driver { get; set; }
+
     }
 }

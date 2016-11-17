@@ -80,5 +80,3 @@ C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\Restau
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.dll
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
-C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Migrations.AddedDBSets.resources
-C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.GenerateResource.Cache

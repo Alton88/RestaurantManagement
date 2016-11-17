@@ -201,26 +201,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611161711506_Added DBSets.cs" />
-    <Compile Include="Migrations\201611161711506_Added DBSets.Designer.cs">
-      <DependentUpon>201611161711506_Added DBSets.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Applicant.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Driver.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Entree.cs" />
-    <Compile Include="Models\Hostess.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\KitchenStaff.cs" />
-    <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Starter.cs" />
     <Compile Include="Models\WaitingList.cs" />
-    <Compile Include="Models\WaitStaff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -293,11 +285,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611161711506_Added DBSets.resx">
-      <DependentUpon>201611161711506_Added DBSets.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
