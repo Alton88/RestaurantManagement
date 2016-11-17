@@ -17,9 +17,10 @@ namespace RestaurantManagement.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        private ApplicationDbContext db;
         public AccountController()
         {
+            db = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -139,7 +140,49 @@ namespace RestaurantManagement.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            if (User.IsInRole("Manager"))
+            {
+                return View("EmployeeRegister");
+            }
             return View();
+        }
+
+        [HttpPost]
+        //[AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> EmployeeRegister(EmployeeRegisterViewModel model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var employee = new Employee
+                {
+                    FirstName = model.Employee.FirstName,
+                    LastName = model.Employee.LastName,
+                    Phone = model.Employee.Phone,
+                    StreetAddress = model.Employee.StreetAddress,
+                    ZipCode = model.Employee.ZipCode,
+                    Wage = model.Employee.Wage
+                };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+
+                var result = await UserManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    var empUser = user.Id;
+
+                    employee.ApplicationUserId = user.Id;
+
+                    db.Employee.Add(employee);
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Roles");
+                }
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
         }
 
         //
