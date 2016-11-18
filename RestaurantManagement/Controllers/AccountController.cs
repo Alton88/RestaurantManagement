@@ -148,7 +148,6 @@ namespace RestaurantManagement.Controllers
         }
 
         [HttpPost]
-        //[AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> EmployeeRegister(EmployeeRegisterViewModel model)
         {
@@ -165,7 +164,6 @@ namespace RestaurantManagement.Controllers
                     Wage = model.Employee.Wage
                 };
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
