@@ -5,14 +5,14 @@
 
 <div class="row col-sm-12 col-lg-12 col-md-12">
     <h1>Role Manager</h1>
-    <br />
+    <br /><br /><br />
 </div>
 
 <div class="row col-sm-12 col-lg-12 col-md-12">
 
 
     <div class="col-sm-6 col-lg-6 col-md-6">
-        <div class="panel panel-primary">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>Role List</h4>
             </div>
@@ -34,7 +34,7 @@
             </div> <!-- End Panel Body-->
         </div> <!-- End Panel -->
 
-        <div class="panel panel-primary">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>Create A New Role</h4>
             </div>
@@ -46,7 +46,7 @@
 
                     <div>
                         Role name: @Html.TextBox("RoleName")
-                        <input type="submit" value="Save" class="btn-primary" />
+                        <input type="submit" value="Save" class="btn-default" />
                     </div>
                 }
 
@@ -55,7 +55,7 @@
     </div> <!--End First Column-->
 
     <div class="col-sm-6 col-lg-6 col-md-6">
-        <div class="panel panel-primary">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>Add a Role to a User</h4>
             </div>
@@ -67,14 +67,14 @@
 
                     <p>User Name: @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")</p>
                     <p>Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")</p>
-                    <p><input type="submit" value="Save" class="btn-primary" /></p>
+                    <p><input type="submit" value="Save" class="btn-default" /></p>
 
                 }
             </div> <!-- End Panel Body-->
         </div> <!-- End Panel -->
 
 
-        <div class="panel panel-primary">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>List Roles for a User</h4>
             </div>
@@ -84,7 +84,7 @@
                     @Html.AntiForgeryToken()
                     <p>
                         User Name: @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")
-                        <input type="submit" value="Get Roles for this User" class="btn-primary" />
+                        <input type="submit" value="Get Roles for this User" class="btn-default" />
                     </p>
                 }
 
@@ -103,7 +103,7 @@
             </div> <!-- End Panel Body-->
         </div> <!-- End Panel -->
 
-        <div class="panel panel-primary">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>Remove Role from User</h4>
             </div>
@@ -115,7 +115,7 @@
 
                     <p>User Name: @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")</p>
                     <p>Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")</p>
-                    <p><input type="submit" value="Delete this user from Role" class="btn-primary" /></p>
+                    <p><input type="submit" value="Delete this user from Role" class="btn-default" /></p>
 
                 }
             </div> <!-- End Panel Body-->

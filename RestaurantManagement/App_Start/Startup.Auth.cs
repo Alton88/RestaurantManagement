@@ -55,12 +55,24 @@ namespace RestaurantManagement
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            //{
+            //    ClientId = "829174115913-lpgj7t304ofq9jtm3sf718tgk71tisjd.apps.googleusercontent.com",
+            //    ClientSecret = "UFSQd0vYEd30LWyTcEP7JGYD",
+            //    CallbackPath = new PathString("/signin-google")
+            //});
+
+            var googleOptions = new GoogleOAuth2AuthenticationOptions()
             {
                 ClientId = "829174115913-lpgj7t304ofq9jtm3sf718tgk71tisjd.apps.googleusercontent.com",
                 ClientSecret = "UFSQd0vYEd30LWyTcEP7JGYD"
-                //CallbackPath = new PathString("http://localhost:10943/signin-google")
-            });
+               // CallbackPath = new PathString("http://localhost:10943/signin-google")
+
+            };
+            googleOptions.Scope.Add("email");
+
+            app.UseGoogleAuthentication(googleOptions);
+
 
             app.UseTwitterAuthentication(new TwitterAuthenticationOptions
             {

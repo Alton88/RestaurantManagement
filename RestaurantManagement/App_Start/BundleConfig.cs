@@ -21,11 +21,23 @@ namespace RestaurantManagement
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/jquery.mixitup.min.js",
+                      "~/Scripts/main.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/font-awesome.min.css",
+                      "~/Content/jquery-ui.css",
+                      "~/Content/main.css",
+                      "~/Content/normalize.css",
+                      "~/Content/picto-foundry-food.css",
+                      "~/Content/normalize.css",
+                      "~/Content/style-portfolio.css"
+                      ));
         }
     }
 }
