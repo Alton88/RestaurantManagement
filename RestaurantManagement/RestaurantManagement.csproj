@@ -206,19 +206,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MenuItemsController.cs" />
+    <Compile Include="Controllers\MenusController.cs" />
+    <Compile Include="Controllers\OrderItemsController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\WaitingListsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612011941578_Converted number of guest to string.cs" />
-    <Compile Include="Migrations\201612011941578_Converted number of guest to string.Designer.cs">
-      <DependentUpon>201612011941578_Converted number of guest to string.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612020059405_Added to Waiting List.cs" />
-    <Compile Include="Migrations\201612020059405_Added to Waiting List.Designer.cs">
-      <DependentUpon>201612020059405_Added to Waiting List.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -228,7 +223,10 @@
     <Compile Include="Models\Entree.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\MenuItems.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Starter.cs" />
     <Compile Include="Models\WaitingList.cs" />
@@ -309,6 +307,21 @@
     <Content Include="Views\WaitingLists\Details.cshtml" />
     <Content Include="Views\WaitingLists\Edit.cshtml" />
     <Content Include="Views\WaitingLists\Index.cshtml" />
+    <Content Include="Views\Menus\Create.cshtml" />
+    <Content Include="Views\Menus\Delete.cshtml" />
+    <Content Include="Views\Menus\Details.cshtml" />
+    <Content Include="Views\Menus\Edit.cshtml" />
+    <Content Include="Views\Menus\Index.cshtml" />
+    <Content Include="Views\MenuItems\Create.cshtml" />
+    <Content Include="Views\MenuItems\Delete.cshtml" />
+    <Content Include="Views\MenuItems\Details.cshtml" />
+    <Content Include="Views\MenuItems\Edit.cshtml" />
+    <Content Include="Views\MenuItems\Index.cshtml" />
+    <Content Include="Views\OrderItems\Create.cshtml" />
+    <Content Include="Views\OrderItems\Delete.cshtml" />
+    <Content Include="Views\OrderItems\Details.cshtml" />
+    <Content Include="Views\OrderItems\Edit.cshtml" />
+    <Content Include="Views\OrderItems\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -320,14 +333,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612011941578_Converted number of guest to string.resx">
-      <DependentUpon>201612011941578_Converted number of guest to string.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612020059405_Added to Waiting List.resx">
-      <DependentUpon>201612020059405_Added to Waiting List.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

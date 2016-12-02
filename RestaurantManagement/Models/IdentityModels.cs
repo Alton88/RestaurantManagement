@@ -37,5 +37,8 @@ namespace RestaurantManagement.Models
         public DbSet<Starter> Starter { get; set; }
         public DbSet<WaitingList> WaitingList { get; set; }
         public DbSet<Employee> Employee { get; set; }
+        public DbSet<Menu> Menu { get; set; }
+        public DbSet<OrderItem> OrderItem { get; set; }
+        public DbSet<MenuItems> MenuItems { get; set; }
     }
 }

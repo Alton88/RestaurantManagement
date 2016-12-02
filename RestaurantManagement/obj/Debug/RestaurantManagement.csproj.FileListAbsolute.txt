@@ -79,11 +79,9 @@ C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\Restau
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.dll
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.pdb
-C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Migrations.Convertednumberofguesttostring.resources
-C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csproj.GenerateResource.Cache
-C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.Migrations.AddedtoWaitingList.resources
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\bin\RestSharp.dll
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\bin\Twilio.Api.dll
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\bin\RestSharp.xml
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\bin\Twilio.Api.pdb
 C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\bin\Twilio.Api.xml
+C:\Users\Alton\Documents\Visual Studio 2015\Projects\RestaurantManagement\RestaurantManagement\obj\Debug\RestaurantManagement.csprojResolveAssemblyReference.cache

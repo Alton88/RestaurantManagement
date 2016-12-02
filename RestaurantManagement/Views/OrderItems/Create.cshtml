@@ -1,0 +1,129 @@
+﻿@*@model MyDatabase.Models.OrderItem*@
+@model IEnumerable<RestaurantManagement.Models.Menu>
+@*@model MyDatabase.ViewModels.OrderingViewModel*@
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Order</h2>
+<br/>
+
+@*<div class="col-xs-12 col-md-9">*@
+@*<div class="col-xs-12 col-md-3">*@
+    <div class="col-xs-12 col-md-9">
+        <div class="col-xs-12 ">
+            @foreach (var menuItems in Model)
+            {
+                <div class="col-xs-3  ">
+                    <div class="thumbnail">
+                        <img class="img-responsive " src="~/Content/Images/@(menuItems.Name).jpg">
+                        <div class="caption text-center">
+                            <p>
+                                <b>Name:</b> <span>@menuItems.Name</span>
+                            </p>
+                            <p>
+                                <b>Price:</b> <span>@menuItems.Price USD</span>
+                            </p>
+
+                            <p class="text-center">
+
+                                @Html.ActionLink("Add to Order", "AddToOrder", "OrderItems", new { id = menuItems.Id }, new { @class = "btn btn-info" })
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <br /><br /><br />
+
+
+    @*@using (Html.BeginForm())               new { id = menuItems.Id}
+        {
+
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+
+                        <td>
+                            @Html.EditorFor(modelItem => item.Price, new { htmlAttributes = new { @class = "form-control" } })
+                        </td>
+
+                    </tr>
+                }
+            </table>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+
+        }*@
+
+
+
+
+
+    @*@using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>OrderItem</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                    @Html.LabelFor(model => model.OrderId, "OrderId", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("OrderId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.OrderId, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+    @*<div class="form-group">
+                    @Html.LabelFor(model => model.MenusId, "MenusId", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("MenusId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MenusId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }*@
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>

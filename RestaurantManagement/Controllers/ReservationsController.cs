@@ -17,7 +17,7 @@ namespace RestaurantManagement.Controllers
         // GET: Reservations
         public ActionResult Index()
         {
-            if (!User.IsInRole("Hostess")) { return Redirect("/Account/Login"); }
+            //if (!User.IsInRole("Hostess")) { return Redirect("/Account/Login"); }
 
             var todayDate = DateTime.Now.Date;
 

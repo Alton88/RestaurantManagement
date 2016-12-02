@@ -24,9 +24,10 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Check Reservations", "Index", "Reservations")</li>
+                    @*<li>@Html.ActionLink("Menu", "Create", "Menus")</li>*@ 
                     @*Uncomment to add Adminisrator*@ 
-                    <li>@Html.ActionLink("Role Manager", "Index", "Roles")</li>
-                    <li>@Html.ActionLink("Register Employee", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    @*<li>@Html.ActionLink("Role Manager", "Index", "Roles")</li>
+                    <li>@Html.ActionLink("Register Employee", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

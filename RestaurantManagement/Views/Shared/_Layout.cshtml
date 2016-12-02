@@ -25,9 +25,11 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     
                     <li>@Html.ActionLink("Check Reservations", "Index", "Reservations")</li>
-                    @*Uncomment to add Adminisrator*@ 
+                    <li>@Html.ActionLink("Menu", "Create", "Menus")</li> 
                     <li>@Html.ActionLink("Role Manager", "Index", "Roles")</li>
-                    <li>@Html.ActionLink("Register Employee", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    @*Uncomment to add Adminisrator*@ 
+                    @*<li>@Html.ActionLink("Role Manager", "Index", "Roles")</li>
+                    <li>@Html.ActionLink("Register Employee", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -36,15 +38,18 @@
     <br/><br/><br /><br />
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            
-            <div>
-                <br /><br /><br /><br /><br /><br />
-                <p>&copy; @DateTime.Now.Year - Alton Yee LLC</p>
-            </div>
-        </footer>
+        
+        
     </div>
+
+    <footer>
+
+        <div>
+            <br /><br /><br /><br /><br /><br />
+            <p>&copy; @DateTime.Now.Year - Alton Yee LLC</p>
+        </div>
+    </footer>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
