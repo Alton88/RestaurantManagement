@@ -8,6 +8,7 @@ namespace RestaurantManagement.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        public Customer Customer { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -79,7 +80,7 @@ namespace RestaurantManagement.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-
+        public Customer Customer { get; set; }
     }
 
     public class EmployeeRegisterViewModel

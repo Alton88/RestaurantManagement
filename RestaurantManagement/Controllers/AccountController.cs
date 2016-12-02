@@ -192,12 +192,26 @@ namespace RestaurantManagement.Controllers
         {
             if (ModelState.IsValid)
             {
+                var customer = new Customer
+                {
+                    FirstName = model.Customer.FirstName,
+                    LastName = model.Customer.LastName,
+                    Phone = model.Customer.Phone,
+                    StreetAddress = model.Customer.StreetAddress,
+                    ZipCode = model.Customer.ZipCode,
+                };
+
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
+                    customer.ApplicationUserId = user.Id;
+
+                    db.Customer.Add(customer);
+                    db.SaveChanges();
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -412,6 +426,20 @@ namespace RestaurantManagement.Controllers
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
+                    var customer = new Customer
+                    {
+                        FirstName = model.Customer.FirstName,
+                        LastName = model.Customer.LastName,
+                        Phone = model.Customer.Phone,
+                        StreetAddress = model.Customer.StreetAddress,
+                        ZipCode = model.Customer.ZipCode,
+                    };
+
+                    customer.ApplicationUserId = user.Id;
+
+                    db.Customer.Add(customer);
+                    db.SaveChanges();
+
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
