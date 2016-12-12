@@ -27,28 +27,38 @@ namespace RestaurantManagement.Controllers
 
         public ActionResult CheckOut()
         {
-            var menuItems = db.MenuItems.ToList();
+            //var menuItems = db.MenuItems.ToList();
             var makeOrder = new Order { Total = 0 };
             var order = db.Order.Add(makeOrder);
             db.SaveChanges();
             var orderItem = db.OrderItem;
-            foreach (var items in menuItems)
+            decimal total = 0;
+            foreach (var items in Repository.OrderItems)
             {
-                var ot = new OrderItem
+                var  item = new OrderItem
                 {
-                    Quantity = 1,
+                    Quantity = items.Quantity,
                     MenuId = items.MenuId,
                     OrderId = order.Id
                 };
-                db.OrderItem.Add(ot);
+                db.OrderItem.Add(item);
                 db.SaveChanges();
-                db.MenuItems.Remove(items);
+
+                total += items.Menu.Price;
+                //db.MenuItems.Remove(items);
             }
+            order.Total = total;
+            db.SaveChanges();
 
-            var finalOrder = db.OrderItem.Where(o => o.OrderId == order.Id);
+            //var addTotalToOrder = db.Order.Find();
 
-            return Content(order.Id.ToString());
-            //return View();
+
+            Repository.Clear();
+
+            var finalOrder = db.OrderItem.Include(m => m.Menu).Include(x => x.Order).Where(o => o.OrderId == order.Id).ToList();
+
+            //return Content(order.Id.ToString());
+            return View("OrderConfirmation",finalOrder);
 
             //var orderItems = db.OrderItem.Where(o => o.OrderId == 1).ToList();
             //var addOrder = new Order {
@@ -138,15 +148,54 @@ namespace RestaurantManagement.Controllers
             return View(orderItem);
         }
 
-        public ActionResult AddToOrder(Menu menu)
+        public ActionResult ViewOrder()
         {
 
-            var addToOrder = new MenuItems
-            {
-                MenuId = menu.Id
+            return View(Repository.OrderItems);
+        }
+
+
+        public ActionResult AddToQuantity(int? id)
+        {
+            var menuItem = db.Menu.Find(id);
+            var orderItems = Repository.OrderItems.SingleOrDefault(o => o.MenuId == id);
+            orderItems.Quantity++;
+            orderItems.Menu.Price = orderItems.Quantity * menuItem.Price;
+            
+            return RedirectToAction("ViewOrder");
+        }
+
+        public ActionResult RemoveFromQuantity(int? id)
+        {
+            var menuItem = db.Menu.Find(id);
+            var orderItems = Repository.OrderItems.SingleOrDefault(o => o.MenuId == id);
+            orderItems.Quantity--;
+            orderItems.Menu.Price = orderItems.Quantity * menuItem.Price;
+
+            return RedirectToAction("ViewOrder");
+        }
+
+        public ActionResult AddToOrder(int? id)
+        {
+            var orderItem = new OrderItem {
+                MenuId = Convert.ToInt16(id),
+                Quantity = 1,
+                Menu = db.Menu.Find(id),
+                Order = new Order()
             };
-            db.MenuItems.Add(addToOrder);
-            db.SaveChanges();
+
+            Repository.AddItem(orderItem);
+
+
+
+            //var addToOrder = new MenuItems
+            //{
+            //    MenuId = id
+            //};
+
+            //return Content(id.ToString());
+            //db.MenuItems.Add(addToOrder);
+            //db.SaveChanges();
 
             //var orderItem = new OrderItem
             //{
@@ -171,7 +220,7 @@ namespace RestaurantManagement.Controllers
             //db.SaveChanges();
 
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ViewOrder");
         }
 
         // GET: OrderItems/Create

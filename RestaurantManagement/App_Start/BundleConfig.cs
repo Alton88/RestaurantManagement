@@ -38,6 +38,19 @@ namespace RestaurantManagement
                       "~/Content/normalize.css",
                       "~/Content/style-portfolio.css"
                       ));
+
+            bundles.Add(new ScriptBundle("~/bundles/site").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/site.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/font-awesome.min.css",
+                      "~/Content/jquery-ui.css",
+                      "~/Content/main2.css",
+                      "~/Content/normalize.css",
+                      "~/Content/picto-foundry-food.css",
+                      "~/Content/normalize.css",
+                      "~/Content/style-portfolio.css"
+                      ));
         }
     }
 }

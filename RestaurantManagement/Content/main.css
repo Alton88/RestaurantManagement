@@ -195,6 +195,17 @@ li{
 INTRO CONTAINER
 =========================*/
 
+.order_container {
+    margin-top: -21px;
+    padding: 0;
+    min-width: 100%;
+    height: 100%;
+    background-image: url(../Image/thaiBackground3.jpg) no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    background-position: center;  
+}
+
 .starter_container {
     margin-top: -21px;
     padding: 0;
@@ -205,6 +216,26 @@ INTRO CONTAINER
     text-align: center;
     background-position: center;  
 }
+
+.starter2_container {
+    margin-top: -21px;
+    padding: 0;
+    min-width: 100%;
+    height: 100%;
+    background: url(Images/thaiFood.jpg) no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    background-position: center;  
+}
+
+
+.follow2_container {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    text-align: center;
+}
+
 .follow_container {
     width: 100%;
     position: absolute;
@@ -218,12 +249,29 @@ INTRO CONTAINER
     margin: 0 auto;
     padding: 0;
 }
+
+.order_follow {
+    display: inline-block;
+    width: 80%;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .top-title{
     color: white;
     font-family: 'Playball', cursive;
     font-size: 120px;
     font-weight: 400;
  }
+ 
+.order-title{
+    color: white;
+    font-family: 'Playball', cursive;
+    font-size: 120px;
+    font-weight: 400;
+}
+ 
 .second-title {
     font-weight: lighter; 
     font-size: 30px; 
@@ -268,6 +316,12 @@ INTRO CONTAINER
 
 .beer.background_content{
     background: url(Images/thaiCook.jpg) no-repeat center center; 
+    background-size: cover;
+    background-position: 70% 50%;
+}
+
+.order.background_content{
+    background: url(Images/thaiBackground2.jpg) no-repeat center center; 
     background-size: cover;
     background-position: 70% 50%;
 }
@@ -488,6 +542,31 @@ p.sub-footer-text a{
     outline: none;
     border:1px solid #8BC3A3;
 }
+
+.formr{
+    width: 100%;
+    padding: 16.94px;
+    /* background:#E2E2E2; */
+    border: 1px solid rgba(13, 12, 12, 0.23);
+    margin-bottom:25px;
+    color:#727272 !important;
+    font-size:13px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.formr:hover{
+    border:1px solid #8BC3A3;
+}
+
+.formr:focus{
+    color: white;
+    outline: none;
+    border:1px solid #8BC3A3;
+}
+
+
 
 .textarea{
     height: 200px;
